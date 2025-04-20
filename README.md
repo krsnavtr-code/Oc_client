@@ -1,12 +1,58 @@
-# React + Vite
+# Client (Next.js)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **client-side** of the project, built with [Next.js](https://nextjs.org/), React 19, and Tailwind CSS 4.
 
-Currently, two official plugins are available:
+## Features
+- Modern React (v19) with Next.js 15.3+
+- Routing, data fetching, and SSR/SSG support
+- Tailwind CSS 4 for styling
+- Axios for API requests
+- Proxy setup for local API calls
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js (v18 or later recommended)
+- npm
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Setup
+```bash
+cd client
+npm install
+```
+
+### Running in Development
+```bash
+npm run dev
+```
+- The app will start on [http://localhost:3000](http://localhost:3000) (or next available port).
+- Requests to `/api` are proxied to the server on port 5000.
+
+### Building for Production
+```bash
+npm run build
+npm start
+```
+
+## Scripts
+- `dev`: Start Next.js in development mode
+- `build`: Build for production
+- `start`: Start the production server
+- `lint`: Run ESLint
+
+## Folder Structure
+- `src/` - Main source code
+- `public/` - Static files
+
+## Environment Variables
+- See `.env.local` for client-side environment variables (if needed)
+
+## Dependencies
+- next, react, react-dom, react-router-dom, axios, tailwindcss, postcss, autoprefixer, lightningcss
+
+## Dev Dependencies
+- TypeScript, ESLint, @types/*, etc.
+
+## Notes
+- Make sure the server is running on port 5000 for API requests.
+- For any issues with native modules (e.g., lightningcss), try deleting `node_modules` and reinstalling.
